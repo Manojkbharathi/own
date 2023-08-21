@@ -4,7 +4,7 @@
     <title>Vibration Example</title>
   </head>
   <body>
-    <a href="#" id="vibrateLink">Click to Vibrate</a>
+    <a href="#" id="vibrateLink">Click </a>
 
     <script>
       function vibrate() {
@@ -16,7 +16,8 @@
       }
 
       const vibrateLink = document.getElementById('vibrateLink');
-      vibrateLink.addEventListener(function () {
+      vibrateLink.addEventListener('click', function (event) {
+        event.preventDefault();
         // Prevent the default link behavior
         vibrate(); // Call the vibrate function
       });
