@@ -16,8 +16,8 @@
       }
 
       const vibrateLink = document.getElementById('vibrateLink');
-      vibrateLink.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent the default link behavior
+      vibrateLink.addEventListener(function () {
+        // Prevent the default link behavior
         vibrate(); // Call the vibrate function
       });
     </script>
