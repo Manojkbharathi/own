@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Vibration Example</title>
   </head>
   <body>
-    <script src="./script.js"></script>
+    <a href="#" id="vibrateLink">Click to Vibrate</a>
+
+    <script>
+      function vibrate() {
+        if (!window.navigator || !window.navigator.vibrate) {
+          console.log('Vibration API is not supported.');
+          return;
+        }
+        window.navigator.vibrate(1000); // Vibrate for 1 second
+      }
+
+      const vibrateLink = document.getElementById('vibrateLink');
+      vibrateLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        vibrate(); // Call the vibrate function
+      });
+    </script>
   </body>
 </html>
